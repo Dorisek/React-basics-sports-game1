@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Game</title>
+</head>
+
+<body>
+    <div id='root'></div>
+    ​
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script crossorigin src='https://unpkg.com/babel-standalone@6/babel.min.js'></script>
+    ​
+    <script type='text/babel'>
+
+        // An App component under which all other components will be added
+
+        function App(props) {
+            return (
+                <div>
+                    <h1>Welcome to the Sports Game starter!</h1>
+                    <em>This file represents the way your code should look after completing the <strong>Setup</strong> steps in the instructions.</em>
+                </div>
+            )
+        }
+
+        class team extends React.Component {
+            constructor(props) {
+                super(props)
+                this.state = {
+                    hometeamShotstaken: 0,
+                    visitingTeamShotTaken: 0,
+                    homeTeamShoot: 0,
+                    visitingTeamShoot: 0,
+
+                }
+
+            }
+            changeHomeTeam = (event) => {
+                this.setState({
+                    team1: event.target.value
+                })
+                let newHomeTeamShotstakenValue = Number(homeTeamShotsTaken.innerHTML) + 1;
+                homeTeamshots.innerHTML = newHomeTeamshotsValue;
+
+            }
+            changeVisitingteam = (event) => {
+                this.setState({
+                    visitingteam: event.target.value
+
+                })
+                let random = Math.random()
+                console.log(random)
+
+                if (random >= 0.2) {
+                    let newVisitingteamValue = Number(visitingTeam.innerHTML) + 1
+                    visitingTeam.innerHTML = newVisitingTeamValue;
+
+                }
+
+            }
+        }
+        handleShotsTakenHomeTeam = (event) => {
+            this.setState((state, props) => ({
+            }))
+            let newHomeTeamShotstakenValue = Number(homeTeamShotsTaken.innerHTML) + 1;
+            homeTeamshots.innerHTML = newHomeTeamshotsValue;
+
+        }
+        handleShootHomeTeam = (event) => {
+            this.setState((state, props) => ({
+
+            }))
+        }
+
+        handleShotsTakenVisitingTeam = (event) => {
+            this.setState((state, props) => ({
+
+            }))
+        }
+        handleShootVisitingTeam = (event) => {
+            this.setState((state, props) => ({
+
+            }))
+        }
+        handleScore = (event) => {
+            this.setState((state, props) => ({
+            }))
+        }
+
+
+        render() {
+            return (
+                <div>
+                    <h1> Basic Sport Game</h1>
+                    <h2> Team one</h2>
+                    <h2> Team two </h2>
+
+                    <button onClick={this.handleShotsTakenTeam1}> Shot taken team one</button>
+                    <button onClick={this.handleShootTeame1}>Shoot team one</button>
+                    <button onClick={this.handleShottakenTeam2}> Shot taken team two</button>
+                    <button onClick={this.handleShootTeam1}>Shoot team two</button>
+                    <h3>{this.state.answer}</h3>
+                </div>
+
+            )
+        }
+        }
+
+
+
+        // Render the App
+        ReactDOM.render(
+            <App />,
+            document.getElementById('root')
+        )
+    </script>
+</body>
+
+</html>
